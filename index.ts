@@ -38,7 +38,14 @@
 // let move: Directions = Directions.down;
 // console.log(move)
 
-// any types 
-let someValue: any = 'akmal';
-let valueStr: number = (someValue as string).length;
-console.log(valueStr)
+// // any types 
+// let someValue: any = 'akmal';
+// let valueStr: number = (someValue as string).length;
+// console.log(valueStr)
+
+// different types 
+type A = {e: string};
+type B = {d: number}
+type C = A & B;
+let ab: C = {e: 'ehmady', d: 3}
+console.log(ab)
