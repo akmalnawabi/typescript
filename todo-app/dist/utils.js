@@ -1,0 +1,28 @@
+export function createTodoState() {
+    return {
+        todos: [],
+        currentId: 1,
+    };
+}
+export function todoActions(state) {
+    return {
+        addTodo: (text) => {
+            const newTodo = {
+                id: state.currentId,
+                text,
+                completed: false,
+            };
+            state.todos.push(newTodo);
+            state.currentId++;
+        },
+        toggleTodo: (id) => {
+            const todo = state.todos.find(t => t.id === id);
+            if (todo) {
+                todo.completed = !todo.completed;
+            }
+        },
+        deleteTodo: (id) => {
+            state.todos = state.todos.filter(t => t.id !== id);
+        },
+    };
+}
