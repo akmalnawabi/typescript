@@ -18,8 +18,20 @@
 //     age: 21
 // }
 // console.log(user.name)
-function identity(value) {
-    return value;
-}
-console.log(identity(7));
-console.log(identity("asdf"));
+// generics
+// function identity<T>(value: T) : T {
+//     return value
+// }
+// console.log(identity<number>(7))
+// console.log(identity<string>("asdf"))
+// enum
+// enum Directions {
+//     up,
+//     down
+// }
+// let move: Directions = Directions.down;
+// console.log(move)
+// any types 
+var someValue = 'akmal';
+var valueStr = someValue.length;
+console.log(valueStr);

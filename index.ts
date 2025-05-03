@@ -23,8 +23,22 @@
 // }
 // console.log(user.name)
 
-function identity<T>(value: T) : T {
-    return value
-}
-console.log(identity<number>(7))
-console.log(identity<string>("asdf"))
+// generics
+// function identity<T>(value: T) : T {
+//     return value
+// }
+// console.log(identity<number>(7))
+// console.log(identity<string>("asdf"))
+
+// enum
+// enum Directions {
+//     up,
+//     down
+// }
+// let move: Directions = Directions.down;
+// console.log(move)
+
+// any types 
+let someValue: any = 'akmal';
+let valueStr: number = (someValue as string).length;
+console.log(valueStr)
