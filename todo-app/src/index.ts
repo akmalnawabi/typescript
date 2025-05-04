@@ -1,16 +1,13 @@
 import { createTodoState, todoActions } from './utils.js';
 import type { Todo, TodoState, TodoActions } from './types.js';
 
-// Initialize state and actions
 const state: TodoState = createTodoState();
 const actions: TodoActions = todoActions(state);
 
-// DOM elements
 const todoForm = document.getElementById('todo-form') as HTMLFormElement;
 const todoInput = document.getElementById('todo-input') as HTMLInputElement;
 const todoList = document.getElementById('todo-list') as HTMLUListElement;
 
-// Render todos
 function renderTodos(): void {
   todoList.innerHTML = '';
   
@@ -41,7 +38,6 @@ function renderTodos(): void {
   });
 }
 
-// Form submission
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const text = todoInput.value.trim();
@@ -53,5 +49,4 @@ todoForm.addEventListener('submit', (e) => {
   }
 });
 
-// Initial render
 renderTodos();

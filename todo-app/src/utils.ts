@@ -18,6 +18,7 @@ export function todoActions(state: TodoState): TodoActions {
       state.todos.push(newTodo);
       state.currentId++;
     },
+    
     toggleTodo: (id: number) => {
       const todo = state.todos.find(t => t.id === id);
       if (todo) {
