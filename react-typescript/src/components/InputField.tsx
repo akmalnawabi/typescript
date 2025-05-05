@@ -1,16 +1,27 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 
 interface Props {
     todo: string;
     setTodo: React.Dispatch<React.SetStateAction<string>>
+    handleAdd: (e: React.FormEvent) => void
 }
 
-const InputField = ({ todo, setTodo }: Props) => {
+const InputField = ({ todo, setTodo, handleAdd }: Props) => {
+    const inputRef = useRef<HTMLInputElement>(null);
 
     return (
-        <form>
-            <input type="input" placeholder='Enter a task' value={todo} onChange={(e) => setTodo(e.target.value)} />
+        <form onSubmit={(e) => {
+            handleAdd(e)
+            inputRef.current?.blur()
+            }}>
+            <input
+             ref={inputRef}
+             type="input" 
+             placeholder='Enter a task' 
+             value={todo} 
+             onChange={(e) => setTodo(e.target.value)}
+              />
             <button type='submit'>Go</button>
         </form>
     )
