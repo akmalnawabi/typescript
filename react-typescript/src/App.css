@@ -1,8 +1,14 @@
 .App {
   text-align: center;
-
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 body {
   background-color: dodgerblue;
+}
+.App span {
+  color: aliceblue;
+  font-weight: bolder;
 }
