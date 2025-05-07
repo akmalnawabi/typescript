@@ -33,6 +33,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null)
     useEffect(() => {
         inputRef.current?.focus();
+        // inputRef.current.style.background = "blue"
     }, [edit]);
 
     return (
